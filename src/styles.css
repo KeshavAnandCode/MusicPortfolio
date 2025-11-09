@@ -1,0 +1,70 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    color: #333;
+    padding: 2rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.track {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.track h3 {
+    margin: 0;
+}
+
+.track p {
+    margin: 0.2rem 0;
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.links .btn {
+    background-color: #00796b;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.links .btn:hover {
+    background-color: #004d40;
+}
+
+/* Featured tracks container - display as squares horizontally */
+.featured-container {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.featured-track {
+    flex: 1 1 calc(33% - 1rem); /* 3 squares per row */
+    background: #e0f7fa; /* subtle highlight for featured */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.featured-track h3 {
+    font-size: 1rem;
+    text-align: center;
+}
+
+.featured-track p {
+    text-align: center;
+}

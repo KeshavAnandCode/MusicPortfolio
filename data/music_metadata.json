@@ -125,7 +125,7 @@
         "artist": "Keshav Anand",
         "movie": "",
         "genre": "Original Rap Song",
-        "date": "2025-07-12",
+        "date": "2023-07-12",
         "duration": 45,
         "format": "flac",
         "bitrate": 1189,
@@ -267,7 +267,8 @@
         "sample_rate": 44100,
         "path_flac": "public/music/flac/Porkalam and Kannana Kanney Medley.flac",
         "path_mp3": "public/music/mp3/Porkalam and Kannana Kanney Medley.mp3",
-        "desc": ""
+        "desc": "",
+        "featured": true
     },
     {
         "filename": "Thendral Vandhu Ennai Thodum",
@@ -297,7 +298,9 @@
         "sample_rate": 44100,
         "path_flac": "public/music/flac/Kanne Kalimaane.flac",
         "path_mp3": "public/music/mp3/Kanne Kalimaane.mp3",
-        "desc": ""
+        "desc": "",
+        "featured": true
+
     },
     {
         "filename": "Kannalaney",
@@ -342,6 +345,8 @@
         "sample_rate": 44100,
         "path_flac": "public/music/flac/Bass-abryiaan.flac",
         "path_mp3": "public/music/mp3/Bass-abryiaan.mp3",
-        "desc": ""
+        "desc": "",
+        "featured": true
+
     }
 ]
