@@ -16,9 +16,10 @@ import os
 import subprocess
 import argparse
 
-FLAC_DIR = "public/music/flac"
-MP3_DIR = "public/music/mp3"
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+FLAC_DIR = os.path.join(BASE_DIR, "public/music/flac")
+MP3_DIR = os.path.join(BASE_DIR, "public/music/mp3")
 
 def ensure_directories() -> None:
     """Create output directories if they do not exist."""
