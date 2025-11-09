@@ -10,6 +10,14 @@ fetch('data/music_metadata.json')
 
     // === Featured Tracks ===
     if (featuredTracks.length > 0) {
+
+      const featuredHeading = document.createElement('h2');
+      featuredHeading.textContent = 'Featured';
+      featuredHeading.style.marginBottom = '1rem';
+      library.appendChild(featuredHeading);
+
+
+
       const featuredContainer = document.createElement('div');
       featuredContainer.className = 'featured-container';
       featuredContainer.style.display = 'flex';
@@ -26,7 +34,6 @@ fetch('data/music_metadata.json')
         div.style.display = 'flex';
         div.style.flexDirection = 'column';
         div.style.justifyContent = 'space-between';
-        div.style.background = '#fff';
         div.style.borderRadius = '8px';
         div.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
 

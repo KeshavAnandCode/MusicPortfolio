@@ -1,70 +1,171 @@
-body {
-    font-family: Arial, sans-serif;
-    background: #f4f4f4;
-    color: #333;
-    padding: 2rem;
+/* ====== Catppuccin Mocha Dark Theme ====== */
+:root {
+    --base-bg: #1e1e2e;          /* Dark background */
+    --surface: #313244;          /* Card background */
+    --overlay: #45475a;          /* Hover / dropdown */
+    --text: #cdd6f4;             /* Main text */
+    --subtext: #bac2de;          /* Secondary text */
+    --accent: #a6e3a1;           /* Greenish accent */
+    --accent-dark: #4caf50;      /* Hover accent */
+    --shadow-light: rgba(0, 0, 0, 0.25);
+    --shadow-glow: rgba(166, 227, 161, 0.4);
 }
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'JetBrains Mono', monospace;
+    background: var(--base-bg);
+    color: var(--text);
+    padding: 2rem;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ===== Header ===== */
 header {
     text-align: center;
     margin-bottom: 2rem;
 }
 
-.track {
-    background: #fff;
-    border-radius: 8px;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+header h1 {
+    font-size: 2rem;
+    color: var(--accent);
+    text-shadow: 0 0 12px var(--shadow-glow);
 }
 
-.track h3 {
-    margin: 0;
-}
-
-.track p {
-    margin: 0.2rem 0;
-}
-
+/* ===== Links / Buttons ===== */
 .links {
     display: flex;
     justify-content: center;
     gap: 1rem;
     margin-bottom: 2rem;
+    flex-wrap: wrap;
 }
 
 .links .btn {
-    background-color: #00796b;
-    color: #fff;
+    background-color: var(--accent);
+    color: var(--base-bg);
     padding: 0.5rem 1rem;
+    border-radius: 10px;
+    font-weight: bold;
     text-decoration: none;
-    border-radius: 5px;
-    transition: background 0.3s;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px var(--shadow-light);
 }
 
 .links .btn:hover {
-    background-color: #004d40;
+    background-color: var(--accent-dark);
+    box-shadow: 0 4px 12px var(--shadow-glow);
+    transform: translateY(-2px);
 }
 
-/* Featured tracks container - display as squares horizontally */
+/* ===== Featured Tracks ===== */
 .featured-container {
     display: flex;
     gap: 1rem;
     margin-bottom: 2rem;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .featured-track {
-    flex: 1 1 calc(33% - 1rem); /* 3 squares per row */
-    background: #e0f7fa; /* subtle highlight for featured */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    flex: 1 1 calc(33% - 1rem);
+    background: var(--accent-dark);
+    box-shadow: 0 6px 14px var(--shadow-light), 0 0 8px var(--shadow-glow);
+    border-radius: 14px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featured-track:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px var(--shadow-light), 0 0 14px var(--shadow-glow);
 }
 
 .featured-track h3 {
-    font-size: 1rem;
+    font-size: 1.1rem;
     text-align: center;
+    margin-bottom: 0.5rem;
+    color: var(--base-bg);
 }
 
 .featured-track p {
     text-align: center;
+    font-size: 0.9rem;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+}
+
+/* ===== Normal Tracks ===== */
+.track {
+    background: var(--surface);
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 12px var(--shadow-light);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.track:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px var(--shadow-light), 0 0 6px var(--shadow-glow);
+}
+
+.track h3 {
+    font-size: 1rem;
+    color: var(--accent);
+    margin-bottom: 0.3rem;
+}
+
+.track p {
+    font-size: 0.9rem;
+    color: var(--subtext);
+    margin-bottom: 0.3rem;
+}
+
+/* ===== Audio Player ===== */
+audio {
+    width: 100%;
+    margin-top: 0.5rem;
+    outline: none;
+    border-radius: 8px;
+}
+
+/* ===== Sort Dropdown ===== */
+#sort-select {
+    padding: 0.5rem 0.8rem;
+    border-radius: 6px;
+    border: none;
+    background: var(--overlay);
+    color: var(--text);
+    font-weight: bold;
+    margin-left: 0.5rem;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+    .featured-track {
+        flex: 1 1 calc(50% - 1rem);
+    }
+}
+
+@media (max-width: 600px) {
+    .featured-track {
+        flex: 1 1 100%;
+    }
+
+    body {
+        padding: 1rem;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
 }
