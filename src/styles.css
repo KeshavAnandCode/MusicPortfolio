@@ -1,4 +1,4 @@
-/* ====== Catppuccin Mocha Dark Theme ====== */
+/* ====== Catppuccin Mocha Dark Theme with Master Animations ====== */
 :root {
     --base-bg: #1e1e2e;          /* Dark background */
     --surface: #313244;          /* Card background */
@@ -7,10 +7,11 @@
     --subtext: #bac2de;          /* Secondary text */
     --accent: #a6e3a1;           /* Greenish accent */
     --accent-dark: #4caf50;      /* Hover accent */
-    --shadow-light: rgba(0, 0, 0, 0.25);
-    --shadow-glow: rgba(166, 227, 161, 0.4);
+    --shadow-light: rgba(0,0,0,0.3);
+    --shadow-glow: rgba(166,227,161,0.4);
 }
 
+/* ===== Global ===== */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -34,7 +35,8 @@ header {
 header h1 {
     font-size: 2rem;
     color: var(--accent);
-    text-shadow: 0 0 12px var(--shadow-glow);
+    text-shadow: 0 0 8px var(--shadow-glow), 0 0 16px rgba(166,227,161,0.2);
+    animation: glow-pulse 3s infinite alternate;
 }
 
 /* ===== Links / Buttons ===== */
@@ -59,7 +61,7 @@ header h1 {
 
 .links .btn:hover {
     background-color: var(--accent-dark);
-    box-shadow: 0 4px 12px var(--shadow-glow);
+    box-shadow: 0 4px 14px var(--shadow-glow), 0 0 8px var(--shadow-glow);
     transform: translateY(-2px);
 }
 
@@ -74,32 +76,60 @@ header h1 {
 
 .featured-track {
     flex: 1 1 calc(33% - 1rem);
-    background: var(--accent-dark);
-    box-shadow: 0 6px 14px var(--shadow-light), 0 0 8px var(--shadow-glow);
-    border-radius: 14px;
+    background: var(--surface);
+    border-radius: 16px;
     padding: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 12px var(--shadow-light), 0 0 6px var(--shadow-glow);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
+/* Animated edge glow for featured */
+.featured-track::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    padding: 2px;
+    background: linear-gradient(120deg, rgba(166,227,161,0.3), rgba(166,227,161,0.1), rgba(166,227,161,0.3));
+    background-size: 400% 400%;
+    filter: blur(6px);
+    opacity: 0.4;
+    z-index: 0;
+    animation: glow-sweep 8s linear infinite;
+}
+
+.featured-track:hover::before {
+    opacity: 1;
+}
+
+/* Keep content above pseudo-element */
+.featured-track > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Hover effects for featured */
 .featured-track:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 20px var(--shadow-light), 0 0 14px var(--shadow-glow);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px var(--shadow-light), 0 0 18px var(--shadow-glow);
 }
 
 .featured-track h3 {
     font-size: 1.1rem;
     text-align: center;
     margin-bottom: 0.5rem;
-    color: var(--base-bg);
+    color: var(--accent);
 }
 
 .featured-track p {
-    text-align: center;
     font-size: 0.9rem;
-    color: var(--text);
+    text-align: center;
+    color: var(--subtext);
     margin-bottom: 0.5rem;
 }
 
@@ -109,13 +139,14 @@ header h1 {
     border-radius: 12px;
     padding: 1rem;
     margin-bottom: 1rem;
-    box-shadow: 0 4px 12px var(--shadow-light);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 3px 10px var(--shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
 }
 
 .track:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 16px var(--shadow-light), 0 0 6px var(--shadow-glow);
+    box-shadow: 0 6px 16px var(--shadow-light), 0 0 8px var(--shadow-glow);
 }
 
 .track h3 {
@@ -135,7 +166,7 @@ audio {
     width: 100%;
     margin-top: 0.5rem;
     outline: none;
-    border-radius: 8px;
+    border-radius: 6px;
 }
 
 /* ===== Sort Dropdown ===== */
@@ -147,6 +178,24 @@ audio {
     color: var(--text);
     font-weight: bold;
     margin-left: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+#sort-select:hover {
+    box-shadow: 0 4px 12px var(--shadow-glow);
+}
+
+/* ===== Animations ===== */
+@keyframes glow-sweep {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes glow-pulse {
+    0% { text-shadow: 0 0 8px var(--shadow-glow); }
+    50% { text-shadow: 0 0 16px var(--shadow-glow); }
+    100% { text-shadow: 0 0 8px var(--shadow-glow); }
 }
 
 /* ===== Responsive ===== */

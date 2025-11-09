@@ -26,17 +26,16 @@ fetch('data/music_metadata.json')
       featuredContainer.style.justifyContent = 'space-between';
 
       featuredTracks.forEach(track => {
+
         const div = document.createElement('div');
         div.className = 'track featured-track';
-        div.style.flex = '1';           // equal width
-        div.style.minWidth = '250px';   // reasonable minimum width
+        div.style.flex = '1';
+        div.style.minWidth = '250px';
         div.style.padding = '1rem';
         div.style.display = 'flex';
         div.style.flexDirection = 'column';
         div.style.justifyContent = 'space-between';
-        div.style.borderRadius = '8px';
-        div.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
-
+        // REMOVE background, borderRadius, boxShadow
         // Title (Movie)
         const title = document.createElement('h3');
         title.textContent = track.movie
