@@ -1,0 +1,11 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Temporary audio files
+*.wav
+*.temp.*
+
+# If you use local debug output
+tmp/
+output/
