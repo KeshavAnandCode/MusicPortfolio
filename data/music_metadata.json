@@ -353,7 +353,7 @@
         "date": "2025-11-11",
         "duration": 240,
         "format": "flac",
-        "bitrate": 1060,
+        "bitrate": 1564,
         "sample_rate": 44100,
         "path_flac": "public/music/flac/VIP Title Track.flac",
         "path_mp3": "public/music/mp3/VIP Title Track.mp3",
