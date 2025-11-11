@@ -252,7 +252,8 @@
         "sample_rate": 44100,
         "path_flac": "public/music/flac/Pudhu Vellai Mazhai.flac",
         "path_mp3": "public/music/mp3/Pudhu Vellai Mazhai.mp3",
-        "desc": ""
+        "desc": "",
+        "featured": true
     },
     {
         "filename": "Porkalam and Kannana Kanney Medley",
@@ -267,7 +268,8 @@
         "sample_rate": 44100,
         "path_flac": "public/music/flac/Porkalam and Kannana Kanney Medley.flac",
         "path_mp3": "public/music/mp3/Porkalam and Kannana Kanney Medley.mp3",
-        "desc": ""
+        "desc": "",
+        "featured": true
     },
     {
         "filename": "Thendral Vandhu Ennai Thodum",
@@ -297,7 +299,8 @@
         "sample_rate": 44100,
         "path_flac": "public/music/flac/Kanne Kalimaane.flac",
         "path_mp3": "public/music/mp3/Kanne Kalimaane.mp3",
-        "desc": ""
+        "desc": "",
+        "featured": true
     },
     {
         "filename": "Kannalaney",
