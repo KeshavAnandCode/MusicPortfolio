@@ -21,7 +21,7 @@ MUSIC_DIRS = {
     "mp3": os.path.join(BASE_DIR, "public", "music", "mp3")
 }
 
-OUTPUT_CSV = os.path.join(BASE_DIR, "data", "music_metadata.csv")
+OUTPUT_CSV = os.path.join(BASE_DIR, "data", "music_metadata_auto.csv")
 
 # CSV columns
 FIELDS = [

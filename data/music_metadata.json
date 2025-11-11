@@ -267,8 +267,7 @@
         "sample_rate": 44100,
         "path_flac": "public/music/flac/Porkalam and Kannana Kanney Medley.flac",
         "path_mp3": "public/music/mp3/Porkalam and Kannana Kanney Medley.mp3",
-        "desc": "",
-        "featured": true
+        "desc": ""
     },
     {
         "filename": "Thendral Vandhu Ennai Thodum",
@@ -298,9 +297,7 @@
         "sample_rate": 44100,
         "path_flac": "public/music/flac/Kanne Kalimaane.flac",
         "path_mp3": "public/music/mp3/Kanne Kalimaane.mp3",
-        "desc": "",
-        "featured": true
-
+        "desc": ""
     },
     {
         "filename": "Kannalaney",
@@ -345,8 +342,21 @@
         "sample_rate": 44100,
         "path_flac": "public/music/flac/Bass-abryiaan.flac",
         "path_mp3": "public/music/mp3/Bass-abryiaan.mp3",
-        "desc": "",
-        "featured": true
-
+        "desc": ""
+    },
+    {
+        "filename": "VIP Title Track",
+        "title": "VIP Title Track",
+        "artist": "Keshav Anand",
+        "movie": "Vellai Illa Pattadhari",
+        "genre": "Bass Cover",
+        "date": "2025-11-11",
+        "duration": 240,
+        "format": "flac",
+        "bitrate": 1060,
+        "sample_rate": 44100,
+        "path_flac": "public/music/flac/VIP Title Track.flac",
+        "path_mp3": "public/music/mp3/VIP Title Track.mp3",
+        "desc": ""
     }
 ]
