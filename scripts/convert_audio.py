@@ -12,14 +12,15 @@ The script:
     • Supports renaming output files via --name.
 """
 
+import argparse
 import os
 import subprocess
-import argparse
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 FLAC_DIR = os.path.join(BASE_DIR, "public/music/flac")
 MP3_DIR = os.path.join(BASE_DIR, "public/music/mp3")
+
 
 def ensure_directories() -> None:
     """Create output directories if they do not exist."""
@@ -39,13 +40,7 @@ def run_ffmpeg(command: list) -> None:
 def convert_to_flac(input_file: str, output_file: str) -> None:
     """Convert the input file to a lossless FLAC file."""
     print(f"→ Converting to FLAC:\n  {input_file}\n  → {output_file}\n")
-    command = [
-        "ffmpeg",
-        "-y",
-        "-i", input_file,
-        "-c:a", "flac",
-        output_file
-    ]
+    command = ["ffmpeg", "-y", "-i", input_file, "-c:a", "flac", output_file]
     run_ffmpeg(command)
 
 
@@ -55,10 +50,13 @@ def convert_to_mp3(input_file: str, output_file: str) -> None:
     command = [
         "ffmpeg",
         "-y",
-        "-i", input_file,
-        "-c:a", "libmp3lame",
-        "-q:a", "0",
-        output_file
+        "-i",
+        input_file,
+        "-c:a",
+        "libmp3lame",
+        "-q:a",
+        "0",
+        output_file,
     ]
     run_ffmpeg(command)
 
@@ -69,9 +67,7 @@ def main():
     )
     parser.add_argument("file", help="Path to the input audio file")
     parser.add_argument(
-        "--name",
-        help="Optional output file name (without extension).",
-        default=None
+        "--name", help="Optional output file name (without extension).", default=None
     )
 
     args = parser.parse_args()

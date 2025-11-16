@@ -12,6 +12,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 INPUT_CSV = os.path.join(BASE_DIR, "data", "music_metadata.csv")
 OUTPUT_JSON = os.path.join(BASE_DIR, "data", "music_metadata.json")
 
+
 def csv_to_json(input_csv: str, output_json: str):
     data = []
 
@@ -29,6 +30,7 @@ def csv_to_json(input_csv: str, output_json: str):
         json.dump(data, f, indent=4, ensure_ascii=False)
 
     print(f"✅ JSON exported to {output_json}")
+
 
 if __name__ == "__main__":
     csv_to_json(INPUT_CSV, OUTPUT_JSON)
